@@ -23,11 +23,16 @@ RUN addgroup -g ${NEXUS_USER_GID} ${NEXUS_USER} && \
     adduser -h ${NEXUS_HOME} -s /bin/sh -u ${NEXUS_USER_GID} -D -G ${NEXUS_USER} -H ${NEXUS_USER} && \
     chown -R ${NEXUS_USER}:${NEXUS_USER} ${SONATYPE_HOME}
 
+RUN mkdir -p /docker-entrypoint-init.d
+COPY docker-entrypoint.sh /entrypoint.sh
+
 USER ${NEXUS_USER}
 
 EXPOSE 8081
 
 WORKDIR ${NEXUS_HOME}
+
+ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["bin/nexus", "run"]
 
