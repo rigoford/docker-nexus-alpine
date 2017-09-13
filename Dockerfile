@@ -5,7 +5,7 @@ MAINTAINER Martin Ford <ford.j.martin@gmail.com>
 ARG SONATYPE_HOME=/opt/sonatype
 ARG NEXUS_USER=nexus
 ARG NEXUS_USER_GID=5205
-ARG NEXUS_VERSION=3.3.2-02
+ARG NEXUS_VERSION=3.4.0-02
 ARG NEXUS_HOME=${SONATYPE_HOME}/nexus-${NEXUS_VERSION}
 ARG NEXUS_DOWNLOAD_URL=https://sonatype-download.global.ssl.fastly.net/nexus/3/nexus-${NEXUS_VERSION}-unix.tar.gz
 
